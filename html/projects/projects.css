@@ -26,10 +26,11 @@ img {
 :root {
   --main-bc-collor: #fff;
   --primary-color: #b963ef;
+  --primary-colorBG: #4a00789c;
   --primary-color-activ: #9e46d4;
   --main-font-text: "Arial", sans-serif;
   --main-font-title: "Arial", sans-serif;
-  --block-indent: 30px;
+  --block-indent: 44px;
   --main-btn-text-color: #b963ef;
   --main-btn-text-color-activ: #9e46d4;
   --border-radius: 8px;
@@ -105,6 +106,18 @@ main {
   height: 49px;
 }
 
+/* Стили для кнопки бургер-меню */
+.header__burge-btn {
+  display: none;
+}
+
+.bar {
+  background-color: #000;
+  height: 3px;
+  width: 100%;
+  border-radius: 3px;
+}
+
 .header__cont-nav ul {
   display: flex;
   flex-wrap: wrap;
@@ -143,7 +156,7 @@ main {
 /* header end */
 .mc__title {
   gap: 20px;
-  padding-top: 20px;
+  padding-top: var(--block-indent);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -151,6 +164,51 @@ main {
   text-align: center;
   font-family: var(--main-font);
   text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  .header__burge-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 25px;
+    padding: 0;
+  }
+  .header__cont-nav {
+    position: fixed;
+    background-color: initial;
+    z-index: -100;
+    inset: 0;
+    transition: background-color 0.3s;
+  }
+  .header__cont-nav.active {
+    position: fixed;
+    background-color: var(--primary-colorBG);
+    z-index: 100;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 10px;
+  }
+  .header__cont-nav ul {
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(-210px);
+    transition: transform 0.3s;
+  }
+  .header__cont-nav ul.active {
+    transform: translateY(0px);
+  }
+  .header__cont-nav ul li {
+    color: #ffffff;
+  }
+  .header__cont-nav ul li.active {
+    color: var(--main-btn-text-color);
+  }
 }
 @media (max-width: 760px) {
   .mc__title {
@@ -162,6 +220,7 @@ main {
     font-size: 16px;
   }
 }
+
 /* mc__about-project start  */
 .mc__about-project {
   padding-top: var(--block-indent);

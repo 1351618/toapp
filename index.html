@@ -20,7 +20,21 @@
             </p>
           </a>
         </div>
-        <div class="header__cont-nav">
+        <button class="header__burge-btn" onclick="burgMenuOnOff()">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
+        <script>
+          function burgMenuOnOff() {
+            const headerMenuBG = document.querySelector(".header__cont-nav");
+            const headerMenu = document.querySelector(".header__cont-nav ul");
+            headerMenuBG.classList.toggle("active");
+            headerMenu.classList.toggle("active");
+          }
+        </script>
+
+        <div class="header__cont-nav" onclick="burgMenuOnOff()">
           <ul>
             <li class="active"><a href="#">Главная</a></li>
             <li><a href="./html/education/education.html">Обучение</a></li>
