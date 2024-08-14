@@ -25,21 +25,13 @@
           <span class="bar"></span>
           <span class="bar"></span>
         </button>
-        <script>
-          function burgMenuOnOff() {
-            const headerMenuBG = document.querySelector(".header__cont-nav");
-            const headerMenu = document.querySelector(".header__cont-nav ul");
-            headerMenuBG.classList.toggle("active");
-            headerMenu.classList.toggle("active");
-          }
-        </script>
 
         <div class="header__cont-nav" onclick="burgMenuOnOff()">
           <ul>
             <li class="active"><a href="#">Главная</a></li>
-            <li><a href="./html/education/education.html">Обучение</a></li>
-            <li><a href="./html/projects/projects.html">Проекты</a></li>
-            <li><a href="./html/our_team/our_team.html">Команда</a></li>
+            <li><a href="./education.html">Обучение</a></li>
+            <li><a href="./projects.html">Проекты</a></li>
+            <li><a href="./our_team.html">Команда</a></li>
           </ul>
         </div>
         <div class="header__cont-num">
@@ -400,5 +392,6 @@
         </div>
       </div>
     </footer>
+    <script src="./index.js"></script>
   </body>
 </html>
